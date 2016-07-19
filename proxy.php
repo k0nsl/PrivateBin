@@ -1,20 +1,22 @@
 <?php
 
+/* HTTP proxy for Piwik's tracker API. */
+
 //$user_agent = 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36 k0nsl-proxy/0.1a';
 $user_agent = 'k0nsl-piwik-proxy/01a';
 
-if (! isset($PIWIK_URL)) {
+if (!isset($PIWIK_URL)) {
     $PIWIK_URL = 'https://s.k0nsl.org/';
 }
 
 // Edit the line below, and replace xyz by the token_auth for the user "UserTrackingAPI"
 // which you created when you followed instructions above.
-if (! isset($TOKEN_AUTH)) {
+if (!isset($TOKEN_AUTH)) {
     $TOKEN_AUTH = '5f2a2cb51210039fba3d549fcf4665d2';
 }
 
 // Maximum time, in seconds, to wait for the Piwik server to return the 1*1 GIF
-if (! isset($timeout)) {
+if (!isset($timeout)) {
     $timeout = 5;
 }
 
@@ -28,6 +30,7 @@ function arrayValue($array, $key, $value = null)
     if (!empty($array[$key])) {
         $value = $array[$key];
     }
+
     return $value;
 }
 
@@ -52,11 +55,11 @@ if (empty($_GET)) {
 
     // Returns 304 if not modified since
     if (!empty($modifiedSince) && $modifiedSince > $lastModified) {
-        sendHeader(sprintf("%s 304 Not Modified", $_SERVER['SERVER_PROTOCOL']));
+        sendHeader(sprintf('%s 304 Not Modified', $_SERVER['SERVER_PROTOCOL']));
     } else {
-        sendHeader('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+        sendHeader('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
         sendHeader('Content-Type: application/javascript; charset=UTF-8');
-        if ($piwikJs = file_get_contents($PIWIK_URL . 'piwik.js')) {
+        if ($piwikJs = file_get_contents($PIWIK_URL.'piwik.js')) {
             echo $piwikJs;
         } else {
             //sendHeader($_SERVER['SERVER_PROTOCOL'] . '505 Internal server error');
@@ -68,24 +71,23 @@ if (empty($_GET)) {
 @ini_set('magic_quotes_runtime', 0);
 
 // 2) PIWIK.PHP PROXY: GET parameters found, this is a tracking request, we redirect it to Piwik
-$url = sprintf("%spiwik.php?cip=%s&token_auth=%s&", $PIWIK_URL, getVisitIp(), $TOKEN_AUTH);
+$url = sprintf('%spiwik.php?cip=%s&token_auth=%s&', $PIWIK_URL, getVisitIp(), $TOKEN_AUTH);
 
 foreach ($_GET as $key => $value) {
-    $url .= urlencode($key ). '=' . urlencode($value) . '&';
+    $url .= urlencode($key).'='.urlencode($value).'&';
 }
-sendHeader("Content-Type: image/gif");
+sendHeader('Content-Type: image/gif');
 $stream_options = array('http' => array(
     'user_agent' => arrayValue($_SERVER, 'HTTP_USER_AGENT', ''),
-    'header'     => sprintf("Accept-Language: %s\r\n", str_replace(array("\n", "\t", "\r"), "", arrayValue($_SERVER, 'HTTP_ACCEPT_LANGUAGE', ''))),
-    'timeout'    => $timeout
+    'header' => sprintf("Accept-Language: %s\r\n", str_replace(array("\n", "\t", "\r"), '', arrayValue($_SERVER, 'HTTP_ACCEPT_LANGUAGE', ''))),
+    'timeout' => $timeout,
 ));
 $ctx = stream_context_create($stream_options);
 
 if (version_compare(PHP_VERSION, '5.3.0', '<')) {
 
     // PHP 5.2 breaks with the new 204 status code so we force returning the image every time
-    echo file_get_contents($url . '&send_image=1', 0, $ctx);
-
+    echo file_get_contents($url.'&send_image=1', 0, $ctx);
 } else {
 
     // PHP 5.3 and above
@@ -97,7 +99,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
     }
 
     echo $content;
-
 }
 
 function getVisitIp()
@@ -108,11 +109,12 @@ function getVisitIp()
         'HTTP_CLIENT_IP',
         'HTTP_CF_CONNECTING_IP',
     );
-    foreach($ipKeys as $ipKey) {
+    foreach ($ipKeys as $ipKey) {
         if (isset($_SERVER[$ipKey])
             && preg_match($matchIp, $_SERVER[$ipKey])) {
             return $_SERVER[$ipKey];
         }
     }
+
     return arrayValue($_SERVER, 'REMOTE_ADDR');
 }
