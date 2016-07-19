@@ -5,7 +5,7 @@
  *
  * @link      https://github.com/PrivateBin/PrivateBin
  * @copyright 2012 Sébastien SAUVAGE (sebsauvage.net)
- * @license   http://www.opensource.org/licenses/zlib-license.php The zlib/libpng License
+ * @license   https://www.opensource.org/licenses/zlib-license.php The zlib/libpng License
  * @version   0.22
  */
 
@@ -72,7 +72,7 @@ $(function() {
         hashToParameterString: function(associativeArray)
         {
             var parameterString = '';
-            for (key in associativeArray)
+            for (var key in associativeArray)
             {
                 if(parameterString === '')
                 {
@@ -131,19 +131,8 @@ $(function() {
         },
 
         /**
-         * Convert all applicable characters to HTML entities
-         *
-         * @param string str
-         * @return string encoded string
-         */
-        htmlEntities: function(str)
-        {
-            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-        },
-
-        /**
          * Text range selection.
-         * From: http://stackoverflow.com/questions/985272/jquery-selecting-text-in-an-element-akin-to-highlighting-with-your-mouse
+         * From: https://stackoverflow.com/questions/985272/jquery-selecting-text-in-an-element-akin-to-highlighting-with-your-mouse
          *
          * @param string element : Indentifier of the element to select (id="").
          */
@@ -242,7 +231,7 @@ $(function() {
 
         /**
          * minimal sprintf emulation for %s and %d formats
-         * From: http://stackoverflow.com/questions/610406/javascript-equivalent-to-printf-string-format#4795914
+         * From: https://stackoverflow.com/questions/610406/javascript-equivalent-to-printf-string-format#4795914
          *
          * @param string format
          * @param mixed args one or multiple parameters injected into format string
@@ -301,6 +290,34 @@ $(function() {
                 }
             }
             return '';
+        },
+
+        /**
+         * Convert all applicable characters to HTML entities.
+         * From: https://github.com/janl/mustache.js/blob/master/mustache.js#L60
+         *
+         * @param string str
+         * @return string escaped HTML
+         */
+        htmlEntities: function(str) {
+            return String(str).replace(
+                /[&<>"'`=\/]/g, function(s) {
+                    return helper.entityMap[s];
+                });
+        },
+
+        /**
+         * character to HTML entity lookup table
+         */
+        entityMap: {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;',
+            '/': '&#x2F;',
+            '`': '&#x60;',
+            '=': '&#x3D;'
         }
     };
 
@@ -635,7 +652,9 @@ $(function() {
                             prettyPrint();
                         }
                         this.prettyPrint.html(
-                            prettyPrintOne(text, null, true)
+                            prettyPrintOne(
+                                helper.htmlEntities(text), null, true
+                            )
                         );
                     }
                     // fall through, as the rest is the same
@@ -973,7 +992,6 @@ $(function() {
             this.showStatus(i18n._('Sending paste...'), true);
 
             var randomkey = sjcl.codec.base64.fromBits(sjcl.random.randomWords(8, 0), 0);
-            var cipherdata_attachment;
             var password = this.passwordInput.val();
             if(files && files[0])
             {
