@@ -1,0 +1,16 @@
+# Ignore data/, tmp/ and vendor/
+data/
+tmp/
+vendor/
+cgi-bin
+# Ignore for safety
+.htaccess
+.htpasswd
+# Ignore unit testing logs, api docs and eclipse project files
+tst/log/
+doc/
+composer.lock
+.settings
+.buildpath
+.project
+.externalToolBuilders

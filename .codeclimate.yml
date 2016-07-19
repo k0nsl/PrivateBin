@@ -1,0 +1,39 @@
+---
+engines:
+  csslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+      - php
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: true
+    checks:
+      Controversial/CamelCaseClassName:
+        enabled: false
+      Controversial/CamelCaseMethodName:
+        enabled: false
+      Controversial/CamelCasePropertyName:
+        enabled: false
+      Controversial/CamelCaseVariableName:
+        enabled: false
+      Controversial/Superglobals:
+        enabled: false
+      CleanCode/ElseExpression:
+        enabled: false
+      CleanCode/StaticAccess:
+        enabled: false
+ratings:
+  paths:
+  - "css/zerobin.css"
+  - "css/bootstrap/zerobin.css"
+  - "js/zerobin.js"
+  - "lib/**.php"
+  - "index.php"
+exclude_paths: []
